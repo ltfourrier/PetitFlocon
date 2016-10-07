@@ -22,7 +22,9 @@ GameObject:
   - 212: {fileID: 212000011303647070}
   - 95: {fileID: 95000012292744938}
   - 114: {fileID: 114000012491615030}
-  m_Layer: 0
+  - 61: {fileID: 61000013352660756}
+  - 114: {fileID: 114000010043416770}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,6 +44,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &61000013352660756
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013264035642}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 12, y: 16}
 --- !u!95 &95000012292744938
 Animator:
   serializedVersion: 3
@@ -59,6 +75,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010043416770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013264035642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76d43838a6496f4ea42cf6cd6f987db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012491615030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb59ae5312fd3b242857710668ce006e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 1
 --- !u!212 &212000011303647070
 SpriteRenderer:
   m_ObjectHideFlags: 1
