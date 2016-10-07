@@ -6,7 +6,7 @@ using System.Collections;
 
 public class ColliderSnap : MonoBehaviour 
 {
-
+	public int tileSize;
     private Vector3 roundedPosition;
     private Vector3 roundedScale;
 
@@ -24,7 +24,7 @@ public class ColliderSnap : MonoBehaviour
 		} 
         else 
         {
-            roundedPosition.Set(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), transform.position.z);
+			roundedPosition.Set(Mathf.Round(transform.position.x / tileSize) * tileSize, Mathf.Round(transform.position.y / tileSize) * tileSize, transform.position.z);
             transform.position = roundedPosition;
             roundedScale.Set(Mathf.Round(transform.localScale.x), Mathf.Round(transform.localScale.y), transform.localScale.z);
             transform.localScale = roundedScale;
