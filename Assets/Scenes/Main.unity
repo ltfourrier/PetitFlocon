@@ -301,8 +301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 691437035}
   lerpFactor: 0.9
-  topRight: {x: 0, y: 0, z: 0}
-  bottomLeft: {x: 0, y: 0, z: 0}
+  topRight: {x: 1000, y: 1000, z: 0}
+  bottomLeft: {x: -1000, y: -1000, z: 0}
 --- !u!114 &1064760289
 MonoBehaviour:
   m_ObjectHideFlags: 0
