@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: b2aa06dc3f0f0a74cbf5111db928dcdb
-timeCreated: 1475859555
+timeCreated: 1475860938
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ScavengerIdle_0
+    21300002: ScavengerIdle_1
+    21300004: ScavengerIdle_2
+    21300006: ScavengerIdle_3
+    21300008: ScavengerIdle_4
+    21300010: ScavengerIdle_5
+    21300012: ScavengerIdle_6
+    21300014: ScavengerIdle_7
+    21300016: ScavengerIdle_8
+    21300018: ScavengerIdle_9
+    21300020: ScavengerIdle_10
+    21300022: ScavengerIdle_11
+    21300024: ScavengerIdle_12
+    21300026: ScavengerIdle_13
+    21300028: ScavengerIdle_14
+    21300030: ScavengerIdle_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -38,7 +54,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -56,7 +72,215 @@ TextureImporter:
     allowsAlphaSplitting: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ScavengerIdle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 48
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 48
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_5
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 32
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_6
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 32
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 32
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_9
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 16
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 16
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 16
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_14
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ScavengerIdle_15
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
