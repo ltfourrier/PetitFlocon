@@ -231,9 +231,20 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013484134754, guid: b103b1154f0077744bc245e728d97e57,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1248581473}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b103b1154f0077744bc245e728d97e57, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &631276136 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000012131349978, guid: 819efd23aac2fff468c78683d6816c8c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1473219448}
+  m_Script: {fileID: 11500000, guid: 4e55ef9ce7e096e4dae3119d8a861180, type: 3}
 --- !u!114 &678855455 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000012510572564, guid: e393709b5b5be8449b2ae0b9a4adee2a,
@@ -292,6 +303,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1261051949}
   m_Script: {fileID: 11500000, guid: fb59ae5312fd3b242857710668ce006e, type: 3}
+--- !u!4 &1248581473 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000013130708058, guid: 23df4145965bd7746a738e04c3325c9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1261051949}
 --- !u!1001 &1261051949
 Prefab:
   m_ObjectHideFlags: 0
@@ -539,12 +555,17 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000014218074534, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+    - target: {fileID: 114000013078357094, guid: e393709b5b5be8449b2ae0b9a4adee2a,
         type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 1248581468}
-    - target: {fileID: 114000013078357094, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+    - target: {fileID: 114000013664567980, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+        type: 2}
+      propertyPath: weather
+      value: 
+      objectReference: {fileID: 631276136}
+    - target: {fileID: 114000014218074534, guid: e393709b5b5be8449b2ae0b9a4adee2a,
         type: 2}
       propertyPath: player
       value: 
@@ -554,6 +575,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1248581468}
+    - target: {fileID: 114000013075517254, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+        type: 2}
+      propertyPath: weather
+      value: 
+      objectReference: {fileID: 631276136}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e393709b5b5be8449b2ae0b9a4adee2a, type: 2}
   m_IsPrefabParent: 0

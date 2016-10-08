@@ -21,8 +21,9 @@ GameObject:
   - 224: {fileID: 224000010836315368}
   - 222: {fileID: 222000013624937880}
   - 114: {fileID: 114000013762933290}
+  - 114: {fileID: 114000013664567980}
   m_Layer: 5
-  m_Name: Arrow
+  m_Name: Storm Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,8 +56,9 @@ GameObject:
   - 224: {fileID: 224000013377756968}
   - 222: {fileID: 222000010294748968}
   - 114: {fileID: 114000012769391408}
+  - 114: {fileID: 114000013075517254}
   m_Layer: 5
-  m_Name: 'Next:'
+  m_Name: Storm Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,6 +375,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114000013075517254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012929290088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdea1e194a4672a40b791c7d1e40b70a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weather: {fileID: 0}
 --- !u!114 &114000013078357094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -393,6 +407,18 @@ MonoBehaviour:
   - {fileID: 21300006, guid: 7317485dced7f4b4d83dd5cbf848b0da, type: 3}
   - {fileID: 21300008, guid: 7317485dced7f4b4d83dd5cbf848b0da, type: 3}
   - {fileID: 21300010, guid: 7317485dced7f4b4d83dd5cbf848b0da, type: 3}
+--- !u!114 &114000013664567980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010370960856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80dcad798d3510c4cbffef624df6341f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weather: {fileID: 0}
 --- !u!114 &114000013762933290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -604,8 +630,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 65}
-  m_SizeDelta: {x: 8, y: 8}
+  m_AnchoredPosition: {x: 19, y: 63}
+  m_SizeDelta: {x: 16, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000012066801290
 RectTransform:
@@ -658,8 +684,8 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 64}
-  m_SizeDelta: {x: 32, y: 16}
+  m_AnchoredPosition: {x: 28, y: 64}
+  m_SizeDelta: {x: 72, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000013504379012
 RectTransform:

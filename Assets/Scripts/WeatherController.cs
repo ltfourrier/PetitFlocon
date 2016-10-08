@@ -17,7 +17,7 @@ public class WeatherController : MonoBehaviour {
 	private float shakeIntensity;
 	private float particleScale;
 	private float damage;
-	private Vector2 stormDirection;
+	public Vector2 stormDirection;
 	private float timer;
 	private Rigidbody2D particle;
 	private float spawnDelay;
