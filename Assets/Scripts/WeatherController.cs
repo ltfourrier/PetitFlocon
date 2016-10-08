@@ -8,6 +8,7 @@ public class WeatherController : MonoBehaviour {
 	public float frequency;
 	public int density;
 	public float speed;
+	public float damage;
 	public Vector2 stormGeneralDirection;
 	public GameObject StormParticlePrefab;
 
@@ -20,6 +21,7 @@ public class WeatherController : MonoBehaviour {
 	void Start () {
 		timer = 0;
 		spawnDelay = 1 / frequency;
+		GetComponent<SpriteRenderer> ().enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +43,7 @@ public class WeatherController : MonoBehaviour {
 					direction = Vector3.Slerp(Rotate(stormGeneralDirection, 45f), Rotate(stormGeneralDirection, -45f), Random.Range(0f, 1f));
 					particle.transform.rotation = Quaternion.FromToRotation (Vector3.up, direction);
 					particle.AddForce (direction * speed * 1000);
+					particle.GetComponent<StormParticleController> ().damage = damage;
 				}
 				timer = 0;
 			}

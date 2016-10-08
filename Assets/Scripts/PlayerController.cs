@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+	public float health;
 	public float movementSpeed;
 	public float range;
 	public float hitSpeed;
@@ -97,7 +98,7 @@ public class PlayerController : MonoBehaviour {
 				timer = 0;
 			}
 		}
-		blueprint.transform.position = transform.position + ((Vector3)actionRange - coll.bounds.center).normalized * 16; // update position
+		blueprint.transform.position = transform.position + ((Vector3)actionRange - coll.bounds.center).normalized * 13; // update position
 		if (building) { // BUILDING MODE
 			if (!blueprint.gameObject.activeSelf)
 				blueprint.gameObject.SetActive (true); // activate blueprint

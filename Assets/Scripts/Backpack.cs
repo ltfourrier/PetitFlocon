@@ -11,7 +11,7 @@ public class Backpack : MonoBehaviour {
 	public Dictionary<ResourceType, int> resources;
 	// Use this for initialization
 	void Start () {
-		resources = new Dictionary<ResourceType, int> () {{ResourceType.wood, 0}};
+		resources = new Dictionary<ResourceType, int> () {{ResourceType.wood, 100}};
 	}
 	
 	// Update is called once per frame

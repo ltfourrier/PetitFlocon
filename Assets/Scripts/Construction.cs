@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Construction : MonoBehaviour {
 
+	public float health;
 	public Sprite horizontal;
 	public Sprite vertical;
 	public Sprite dfault;
