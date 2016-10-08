@@ -7,6 +7,7 @@ public class ResourceController : MonoBehaviour {
 	public GameObject resourcePrefab;
 	public int resourceAmount;
 	public float spawnRange;
+	public Sprite remainsSprite;
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +26,9 @@ public class ResourceController : MonoBehaviour {
 			for (int i = 0; i < resourceAmount; i++) {
 				Instantiate (resourcePrefab, randomVector(), transform.rotation);
 			}
-			Destroy (gameObject);
+			GetComponent<SpriteRenderer> ().sprite = remainsSprite;
+			GetComponent<BoxCollider2D> ().enabled = false;
+			this.enabled = false;
 		}
 	}
 

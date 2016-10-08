@@ -6,12 +6,14 @@ public class PlayerController : MonoBehaviour {
 	public float movementSpeed;
 	public float range;
 	public float hitSpeed;
+	public GameObject blueprintPrefab;
 
+	private GameObject blueprint;
 	private float hAxis, vAxis;
 	private Vector3 newPosition, movement;
-	private Vector2 actionRange;
+	private Vector2 actionRange; // determines the max distance resources can be mined
 	private float timer;
-	private bool acting;
+	private bool acting, building; // player modes
 	private RaycastHit2D raycast;
 	private Animator animator;
 	private BoxCollider2D coll;
@@ -22,26 +24,41 @@ public class PlayerController : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		coll = GetComponent<BoxCollider2D> ();
 		sprite = GetComponent<SpriteRenderer> ();
+		blueprint = Instantiate (blueprintPrefab);
+		blueprint.SetActive (false);
 		timer = 0;
 	}
 
 
 	void Update () {
-		if (Input.GetButton ("Action") && (raycast = Physics2D.Linecast (coll.transform.position, actionRange, 1 << LayerMask.NameToLayer ("Resource")))) {
-			
+		if (building && Input.GetButton ("Action")) // exit building mode if action button is pressed
+			building = false;
+
+		// if action button is pressed and a resource is in range to be mined, enter action mode
+		if (Input.GetButton ("Action") && (raycast = Physics2D.Linecast (coll.bounds.center, actionRange, 1 << LayerMask.NameToLayer ("Resource")))) {
 				acting = true;
 		} else {
+			// enter movement mode
 			acting = false;
 			if (timer != 0)
 				timer = 0;
-		}
 
+			if (Input.GetButtonDown ("Place")) {
+				if (!building) // if place button is pressed for the first time, enter build mode
+					building = true;
+				else { // if it's the second press, build shit
+					// TODO build code here
+				}
+			}
+				
+		}
+			
 		sprite.sortingOrder = Mathf.RoundToInt (-transform.position.y / 8);
 	}
 
 
 	void FixedUpdate () {
-		if (!acting) {
+		if (!acting) { // MOVEMENT MODE
 			hAxis = Input.GetAxis ("Horizontal");
 			vAxis = Input.GetAxis ("Vertical");
 
@@ -63,8 +80,9 @@ public class PlayerController : MonoBehaviour {
 			movement.Normalize ();
 			newPosition = transform.position + movement;
 			transform.position = newPosition;
+			
 
-		} else {
+		} else { // ACTION MODE
 			if (animator.GetBool ("Moving"))
 				animator.SetBool ("Moving", false);
 			
@@ -74,10 +92,17 @@ public class PlayerController : MonoBehaviour {
 				timer = 0;
 			}
 		}
+
+		if (building) { // BUILDING MODE
+			if (!blueprint.activeSelf)
+				blueprint.SetActive (true);
+			blueprint.transform.position = transform.position + ((Vector3)actionRange - coll.bounds.center).normalized * 16;
+		} else if (blueprint.activeSelf)
+			blueprint.SetActive (false);
 	}
 
 
-	void Move(int direction)
+	void Move(int direction) // changes animation and action range depending on direction
 	{
 		animator.SetBool ("Moving", true);
 		switch (direction) {
