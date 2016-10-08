@@ -90,7 +90,8 @@ MonoBehaviour:
   hitPoint: 4
   resourcePrefab: {fileID: 1000012586002336, guid: c9ef506e7731e754dbc4079f1a284009,
     type: 2}
-  resourceAmount: 10
+  minResourceAmount: 8
+  maxResourceAmount: 10
   spawnRange: 12
   remainsSprite: {fileID: 21300000, guid: 40c284c0f2f79054098923cfe8ea5bf9, type: 3}
 --- !u!114 &114000011609135322

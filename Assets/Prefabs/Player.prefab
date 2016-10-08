@@ -109,7 +109,7 @@ MonoBehaviour:
   movementSpeed: 1
   range: 3
   hitSpeed: 1
-  blueprintPrefab: {fileID: 1000010384552824, guid: 6686fd21ac030064498b576f9eac0f9b,
+  blueprintPrefab: {fileID: 1000010323158908, guid: 6686fd21ac030064498b576f9eac0f9b,
     type: 2}
 --- !u!114 &114000010026757406
 MonoBehaviour:

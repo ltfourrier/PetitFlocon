@@ -5,9 +5,12 @@ public class ResourceController : MonoBehaviour {
 
 	public int hitPoint;
 	public GameObject resourcePrefab;
-	public int resourceAmount;
+	public int minResourceAmount;
+	public int maxResourceAmount;
 	public float spawnRange;
 	public Sprite remainsSprite;
+
+	private int resourceAmount;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +26,7 @@ public class ResourceController : MonoBehaviour {
 		hitPoint--;
 		Camera.main.GetComponent<CameraShake> ().shake (25f, 10f);
 		if (hitPoint <= 0) {
+			resourceAmount = Random.Range (minResourceAmount, maxResourceAmount);
 			for (int i = 0; i < resourceAmount; i++) {
 				Instantiate (resourcePrefab, randomVector(), transform.rotation);
 			}

@@ -4,14 +4,15 @@ using System.Collections;
 public class StormParticleController : MonoBehaviour {
 
 	public float damage;
+	private Camera cam;
 
 	void Start () {
-	
+		cam = Camera.main;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (transform.position.x > 110)
+		if (Vector2.Distance(transform.position, cam.transform.position) > 170)
 			Destroy (gameObject);
 	}
 
