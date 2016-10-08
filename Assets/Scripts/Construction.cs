@@ -24,11 +24,6 @@ public class Construction : MonoBehaviour {
 
 		TriggerUpdate (true);
 	}
-	
-
-	void Update () {
-		//TriggerUpdate ();
-	}
 
 	void TriggerUpdate(bool updateNeighbours){
 
@@ -36,14 +31,6 @@ public class Construction : MonoBehaviour {
 		raycast [1] = Physics2D.Linecast (coll.bounds.center + Vector3.left * 9, coll.bounds.center + Vector3.left * 10, 1 << LayerMask.NameToLayer ("Construction"));
 		raycast [2] = Physics2D.Linecast (coll.bounds.center + Vector3.up * 9, coll.bounds.center + Vector3.up * 10, 1 << LayerMask.NameToLayer ("Construction"));
 		raycast [3] = Physics2D.Linecast (coll.bounds.center + Vector3.right * 9, coll.bounds.center + Vector3.right * 10, 1 << LayerMask.NameToLayer ("Construction"));
-	
-
-		Debug.Log (gameObject.name);
-		foreach (RaycastHit2D r in raycast)
-			if (r)
-				Debug.Log ("yes");
-			else
-				Debug.Log ("no");
 
 		if (updateNeighbours)
 			foreach (RaycastHit2D r in raycast)

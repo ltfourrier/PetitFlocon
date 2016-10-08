@@ -2,7 +2,6 @@
 using System.Collections;
 
 [ExecuteInEditMode]
-[RequireComponent (typeof (BoxCollider2D))]
 
 public class ColliderSnap : MonoBehaviour 
 {

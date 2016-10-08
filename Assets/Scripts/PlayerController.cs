@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public float hitSpeed;
 	public GameObject blueprintPrefab;
 
-	private GameObject blueprint;
+	private Blueprint blueprint;
 	private float hAxis, vAxis;
 	private Vector3 newPosition, movement;
 	private Vector2 actionRange; // determines the max distance resources can be mined
@@ -18,14 +18,17 @@ public class PlayerController : MonoBehaviour {
 	private Animator animator;
 	private BoxCollider2D coll;
 	private SpriteRenderer sprite;
+	private Backpack backpack;
 
 
 	void Start () {
 		animator = GetComponent<Animator> ();
 		coll = GetComponent<BoxCollider2D> ();
 		sprite = GetComponent<SpriteRenderer> ();
-		blueprint = Instantiate (blueprintPrefab);
-		blueprint.SetActive (false);
+		backpack = GetComponent<Backpack> ();
+		blueprint = Instantiate (blueprintPrefab).GetComponent<Blueprint>();
+		blueprint.transform.parent = transform;
+		blueprint.gameObject.SetActive (false);
 		timer = 0;
 	}
 
@@ -47,9 +50,11 @@ public class PlayerController : MonoBehaviour {
 				if (!building) // if place button is pressed for the first time, enter build mode
 					building = true;
 				else { // if it's the second press, build shit
-					blueprint.SendMessage("PlaceConstruction");
+					blueprint.PlaceConstruction();
 				}
 			}
+			if (blueprint.cost > backpack.resources [blueprint.type]) // if the player cannot build
+				building = false;
 				
 		}
 			
@@ -92,13 +97,13 @@ public class PlayerController : MonoBehaviour {
 				timer = 0;
 			}
 		}
-
+		blueprint.transform.position = transform.position + ((Vector3)actionRange - coll.bounds.center).normalized * 16; // update position
 		if (building) { // BUILDING MODE
-			if (!blueprint.activeSelf)
-				blueprint.SetActive (true);
-			blueprint.transform.position = transform.position + ((Vector3)actionRange - coll.bounds.center).normalized * 16;
-		} else if (blueprint.activeSelf)
-			blueprint.SetActive (false);
+			if (!blueprint.gameObject.activeSelf)
+				blueprint.gameObject.SetActive (true); // activate blueprint
+			
+		} else if (blueprint.gameObject.activeSelf) // if out of building mode, deactivate.
+			blueprint.gameObject.SetActive (false);
 	}
 
 

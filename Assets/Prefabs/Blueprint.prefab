@@ -70,6 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   constructionPrefab: {fileID: 1000013483185604, guid: 5d0752c751619a94cb518424b917d4f6,
     type: 2}
+  type: 0
+  cost: 10
 --- !u!114 &114000012400427436
 MonoBehaviour:
   m_ObjectHideFlags: 1

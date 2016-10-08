@@ -21,7 +21,7 @@ public class ResourceController : MonoBehaviour {
 
 	public void Hit(){
 		hitPoint--;
-		Camera.main.GetComponent<CameraShake> ().shake (10f, 4f);
+		Camera.main.GetComponent<CameraShake> ().shake (25f, 10f);
 		if (hitPoint <= 0) {
 			for (int i = 0; i < resourceAmount; i++) {
 				Instantiate (resourcePrefab, randomVector(), transform.rotation);
