@@ -21,6 +21,8 @@ GameObject:
   - 4: {fileID: 4000013273159374}
   - 212: {fileID: 212000014222609280}
   - 114: {fileID: 114000010364189272}
+  - 114: {fileID: 114000012400427436}
+  - 61: {fileID: 61000012942823450}
   m_Layer: 0
   m_Name: Blueprint
   m_TagString: Untagged
@@ -41,6 +43,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &61000012942823450
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010384552824}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 4}
+  serializedVersion: 2
+  m_Size: {x: 8, y: 8}
 --- !u!114 &114000010364189272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,6 +68,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e10145902b16db4ab1cb1c740da3021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000012400427436
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010384552824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5849d47a6f312741b6c96c42a8c8be6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alwaysUnder: 0
+  alwaysAbove: 0
 --- !u!212 &212000014222609280
 SpriteRenderer:
   m_ObjectHideFlags: 1
