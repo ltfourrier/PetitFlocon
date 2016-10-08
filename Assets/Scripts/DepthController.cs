@@ -9,8 +9,9 @@ public class DepthController : MonoBehaviour {
 	void Start () {
 		if (alwaysUnder)
 			GetComponent<SpriteRenderer> ().sortingOrder = -32768;
-		if (alwaysAbove)
+		else if (alwaysAbove)
 			GetComponent<SpriteRenderer> ().sortingOrder = 32767;
-		GetComponent<SpriteRenderer> ().sortingOrder = Mathf.RoundToInt (-transform.position.y / 8);
+		else
+			GetComponent<SpriteRenderer> ().sortingOrder = Mathf.RoundToInt (-transform.position.y / 8);
 	}
 }

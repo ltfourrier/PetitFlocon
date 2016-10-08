@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
 				if (!building) // if place button is pressed for the first time, enter build mode
 					building = true;
 				else { // if it's the second press, build shit
-					// TODO build code here
+					blueprint.SendMessage("PlaceConstruction");
 				}
 			}
 				

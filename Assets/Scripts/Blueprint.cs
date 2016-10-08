@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Blueprint : MonoBehaviour {
 
+	public GameObject constructionPrefab;
+
 	private Vector3 roundedPosition;
 	private Vector3 roundedScale;
 	private SpriteRenderer rend;
@@ -23,5 +25,10 @@ public class Blueprint : MonoBehaviour {
 	}
 	void OnTriggerExit2D(Collider2D other){
 		rend.enabled = true;
+	}
+
+	public void PlaceConstruction(){
+		GameObject construction = Instantiate (constructionPrefab);
+		construction.transform.position = transform.position;
 	}
 }
