@@ -10,6 +10,8 @@ public class CameraShake : MonoBehaviour
     void Start()
     {
         originRotation = transform.rotation;
+		shake_intensity = 0f;
+		shake_decay = 1f;
     }
  
    void Update ()
