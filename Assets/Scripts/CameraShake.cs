@@ -27,7 +27,7 @@ public class CameraShake : MonoBehaviour
 				transform.position = new Vector3 (
 					transform.position.x + Random.Range (-shake_intensity, shake_intensity) * 10f,
 					transform.position.y + Random.Range (-shake_intensity, shake_intensity) * 10f,
-					transform.position.z + Random.Range (-shake_intensity, shake_intensity) * 10f);
+					transform.position.z);
 			}
 			
             shake_intensity -= shake_decay;

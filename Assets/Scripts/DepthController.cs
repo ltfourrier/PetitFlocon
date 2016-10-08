@@ -4,18 +4,13 @@ using System.Collections;
 public class DepthController : MonoBehaviour {
 
 	public bool alwaysUnder;
-	private float newZ;
+	public bool alwaysAbove;
 	// Use this for initialization
 	void Start () {
-		newZ = transform.position.y / 1000f;
-		if (alwaysUnder) 
-			newZ+=10;
-		gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, newZ);
+		if (alwaysUnder)
+			GetComponent<SpriteRenderer> ().sortingOrder = -32768;
+		if (alwaysAbove)
+			GetComponent<SpriteRenderer> ().sortingOrder = 32767;
+		GetComponent<SpriteRenderer> ().sortingOrder = Mathf.RoundToInt (-transform.position.y / 8);
 	}
-	
-	// Update is called once per frame
-	/*void Update () {
-		newZ = (transform.position.y - player.transform.position.y) / 100f;
-		gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, newZ);
-	}*/
 }

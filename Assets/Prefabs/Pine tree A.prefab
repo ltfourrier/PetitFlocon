@@ -55,9 +55,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0.15, y: -10}
+  m_Offset: {x: 0, y: 5}
   serializedVersion: 2
-  m_Size: {x: 7.5, y: 12}
+  m_Size: {x: 8, y: 8}
 --- !u!114 &114000011556624310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +70,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoint: 4
-  resourceAmount: 0
+  resourcePrefab: {fileID: 1000012586002336, guid: c9ef506e7731e754dbc4079f1a284009,
+    type: 2}
+  resourceAmount: 20
+  spawnRange: 20
 --- !u!114 &114000011609135322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alwaysUnder: 0
+  alwaysAbove: 0
 --- !u!114 &114000012717084568
 MonoBehaviour:
   m_ObjectHideFlags: 1

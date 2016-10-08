@@ -11,9 +11,10 @@ public class CameraController : MonoBehaviour {
 
     private float camHeight;
     private float camWidth;
+	private float originalZ;
     private Vector3 clampedPosition;
     private Vector3 playerProjection;
-    private Vector3 offsetPosition;
+    //private Vector3 offsetPosition;
 
     /*void OnGUI ()
     {
@@ -33,15 +34,16 @@ public class CameraController : MonoBehaviour {
 
 	void Start () 
     {
-        transform.position = new Vector3(player.position.x, player.position.y, -10);
+		originalZ = transform.position.z;
+        transform.position = new Vector3(player.position.x, player.position.y, originalZ);
         playerProjection = new Vector3();
-        offsetPosition = Vector3.right;
+        //offsetPosition = Vector3.right;
         Application.targetFrameRate = 60;
         camHeight = Camera.main.orthographicSize;
         camWidth = Camera.main.aspect * camHeight;
         Screen.SetResolution(1024, 576, false);
         Application.targetFrameRate = 60;
-        Time.timeScale = 1f ;
+		Time.timeScale = 1f;
 	}
 
     void Update()
@@ -52,7 +54,7 @@ public class CameraController : MonoBehaviour {
 	
 	void FixedUpdate () 
     {
-        playerProjection.Set(player.position.x, player.position.y, -10);
+		playerProjection.Set(player.position.x, player.position.y, originalZ);
         transform.position = Vector3.Lerp(playerProjection, transform.position, lerpFactor);
 
 
@@ -63,6 +65,6 @@ public class CameraController : MonoBehaviour {
             transform.position.z
         );
 
-        //transform.position = clampedPosition;
+        transform.position = clampedPosition;
 	}
 }
