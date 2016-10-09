@@ -73,8 +73,8 @@ public class PlayerController : MonoBehaviour {
 			vAxis = Input.GetAxis ("Vertical");
 
 			if (hAxis == 0 && vAxis == 0)
-			if (animator.GetBool ("Moving"))
-				animator.SetBool ("Moving", false);
+			if (animator.GetInteger ("State") != 0)
+				animator.SetInteger ("State", 0);
 
 			if (hAxis > 0)
 				Move (4);
@@ -93,9 +93,8 @@ public class PlayerController : MonoBehaviour {
 			
 
 		} else { // ACTION MODE
-			if (animator.GetBool ("Moving"))
-				animator.SetBool ("Moving", false);
-			
+			if (animator.GetInteger ("State") != 2)
+				animator.SetInteger ("State", 2);
 
 			if (timer <= 0) {
 				raycast.collider.gameObject.GetComponent<ResourceController> ().Hit ();
@@ -117,7 +116,8 @@ public class PlayerController : MonoBehaviour {
 
 	void Move(int direction) // changes animation and action range depending on direction
 	{
-		animator.SetBool ("Moving", true);
+		if ( animator.GetInteger("State") != 1)
+			animator.SetInteger ("State", 1);
 		switch (direction) {
 		case 1: // down
 			animator.SetInteger ("Direction", 1);
