@@ -9,6 +9,7 @@ public class TutorialController : MonoBehaviour {
 	public Text dialog;
 	public ResourceController rock;
 	public ResourceController tree;
+	public GameObject boundaries;
 
 	private CameraController cam;
 	private int step;
@@ -100,6 +101,7 @@ public class TutorialController : MonoBehaviour {
 			dialog.text = dialogContent;
 			cam.topRight = transform.position;
 			cam.bottomLeft = transform.position;
+			boundaries.SetActive (false);
 			timer -= Time.deltaTime;
 			if (timer <= 0) { // TODO change condition
 				step = 9;

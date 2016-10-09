@@ -28,12 +28,14 @@ public class Construction : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		health -= automaticDecay / 100;
+		health -= automaticDecay / 100;		
+	}
+
+	void Update() {
 		if (health <= 0) {
-			Destroy (gameObject);
 			TriggerUpdate (true);
+			Destroy (gameObject);
 		}
-			
 	}
 
 	void TriggerUpdate(bool updateNeighbours){

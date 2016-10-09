@@ -44,14 +44,8 @@ public class CameraController : MonoBehaviour {
         //Screen.SetResolution(640, 576, false);
 		Time.timeScale = 1f;
 	}
-
-    void Update()
-    {
-        
-        //Debug.Log(transform.position.x);
-    }
 	
-	void FixedUpdate () 
+	void Update () 
     {
 		
 		playerProjection.Set(player.position.x, player.position.y, originalZ);
