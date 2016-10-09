@@ -38,11 +38,6 @@ public class WeatherController : MonoBehaviour {
 		audioSource = GetComponent<AudioSource> ();
 		GenerateStorm (strenght);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
 	void FixedUpdate() {
 		if (maxStrenght < 7f)

@@ -12,9 +12,4 @@ public class Terrain : MonoBehaviour {
 		else
 			GetComponent<SpriteRenderer> ().sprite = sprites [Random.Range (0, sprites.Count)];
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
