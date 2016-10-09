@@ -90,6 +90,25 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &256651769 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011831057094, guid: 23df4145965bd7746a738e04c3325c9b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1261051949}
+--- !u!114 &256651778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 256651769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d70d76c57ea66d84c82e203bfd0f26dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: 766b69bbd51b5db449bcaf1667c5fbee, type: 3}
+  jingle: {fileID: 8300000, guid: 290ed49c44ddd854486a38de53444216, type: 3}
+  musicSource: {fileID: 1671261259}
 --- !u!1001 &516999850
 Prefab:
   m_ObjectHideFlags: 0
@@ -355,12 +374,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114000012131349978, guid: 819efd23aac2fff468c78683d6816c8c,
-        type: 2}
-      propertyPath: stormParticlePrefab
-      value: 
-      objectReference: {fileID: 1000011553629362, guid: 405e1c9a259fe2a469838a5393910103,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 819efd23aac2fff468c78683d6816c8c, type: 2}
   m_IsPrefabParent: 0
@@ -394,7 +407,7 @@ AudioSource:
   m_Volume: 0.129
   m_Pitch: 1
   Loop: 1
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   Priority: 128
   DopplerLevel: 1
@@ -592,7 +605,28 @@ Prefab:
     - target: {fileID: 224000010413347262, guid: e393709b5b5be8449b2ae0b9a4adee2a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 65
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 95000011072510450, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012279860814, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300020, guid: e48cb68bb36c71b4f98b59430cee03e3,
+        type: 3}
+    - target: {fileID: 95000010292172414, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f90398c9e221a194d9c4634ad3998c2b, type: 2}
+    - target: {fileID: 95000010292172414, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e393709b5b5be8449b2ae0b9a4adee2a, type: 2}
