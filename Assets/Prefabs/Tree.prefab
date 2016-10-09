@@ -26,6 +26,7 @@ GameObject:
   - 114: {fileID: 114000012168858112}
   - 50: {fileID: 50000013373523718}
   - 82: {fileID: 82000010182616040}
+  - 114: {fileID: 114000012372761730}
   m_Layer: 9
   m_Name: Tree
   m_TagString: Untagged
@@ -185,6 +186,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alwaysUnder: 0
   alwaysAbove: 0
+--- !u!114 &114000012372761730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010699016182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d5dace559a78c4c8070ee131c523ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012784112524
 MonoBehaviour:
   m_ObjectHideFlags: 1
