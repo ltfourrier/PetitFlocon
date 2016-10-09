@@ -193,6 +193,10 @@ Prefab:
       propertyPath: weather
       value: 
       objectReference: {fileID: 631276136}
+    - target: {fileID: 1000013308036946, guid: 5d737163cecc93646891b47f6048a807, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d737163cecc93646891b47f6048a807, type: 2}
   m_IsPrefabParent: 0
@@ -304,6 +308,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114000012131349978, guid: 819efd23aac2fff468c78683d6816c8c,
+        type: 2}
+      propertyPath: stormParticlePrefab
+      value: 
+      objectReference: {fileID: 1000011553629362, guid: 405e1c9a259fe2a469838a5393910103,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 819efd23aac2fff468c78683d6816c8c, type: 2}
   m_IsPrefabParent: 0
@@ -532,6 +542,11 @@ Prefab:
       propertyPath: weather
       value: 
       objectReference: {fileID: 631276136}
+    - target: {fileID: 224000010413347262, guid: e393709b5b5be8449b2ae0b9a4adee2a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e393709b5b5be8449b2ae0b9a4adee2a, type: 2}
   m_IsPrefabParent: 0
@@ -565,6 +580,7 @@ MonoBehaviour:
   terrainRenderer: {fileID: 1000010722776666, guid: 66ea0b2eb7a88684baf893195c3bacc1,
     type: 2}
   pineTree: {fileID: 1000010699016182, guid: 9c7d62ba3d28ba64e8ab4396a1b94438, type: 2}
+  mineral: {fileID: 1000012943371916, guid: 9c7c1f1a09681454f92aa4ccc76ed5c2, type: 2}
   mainCamera: {fileID: 1962830429}
   chunkWidth: 32
   chunkHeight: 32
