@@ -4,7 +4,6 @@ using System.Collections;
 public class PickupController : MonoBehaviour {
 
 	public float magnetRadius;
-	public float speed;
 	public ResourceType type;
 	private Transform player;
 	private BoxCollider2D coll;
@@ -23,7 +22,7 @@ public class PickupController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if ((backpack = other.gameObject.GetComponent<Backpack> ()) != null) {
-			backpack.resources [type]++;
+			backpack.addResource(type);
 			Destroy (gameObject);
 		}
 	}

@@ -25,6 +25,7 @@ public class WeatherController : MonoBehaviour {
 	private Vector2 direction;
 	private Vector2 parallel;
 	private Vector2 stormOrigin;
+	private AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +34,7 @@ public class WeatherController : MonoBehaviour {
 		GetComponent<SpriteRenderer> ().enabled = false;
 		parallel = Rotate(stormDirection, 45f);
 		strenght = Random.Range (1, maxStrenght);
+		audioSource = GetComponent<AudioSource> ();
 		GenerateStorm (strenght);
 	}
 	
@@ -43,6 +45,10 @@ public class WeatherController : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (storm) {
+			if (!audioSource.isPlaying) {
+				audioSource.volume = strenght / maxStrenght;
+				audioSource.Play ();
+			}
 			durationTimer -= Time.fixedDeltaTime;
 			if (durationTimer <= 0) {
 				storm = false;
@@ -67,6 +73,8 @@ public class WeatherController : MonoBehaviour {
 				timer = 0;
 			}
 		} else {
+			if (audioSource.isPlaying)
+				audioSource.Stop ();
 			nextTimer -= Time.fixedDeltaTime;
 			if (nextTimer <= 0)
 				storm = true;
@@ -80,7 +88,7 @@ public class WeatherController : MonoBehaviour {
 		frequency = 1f + strenghtFactor * 3f;
 		spawnDelay = 1 / frequency;
 		speed = 10f + strenghtFactor;
-		damage = 1f + strenghtFactor / 5;
+		damage = 1f + strenghtFactor / 10f;
 		shakeIntensity = 2f + strenghtFactor * 3f;
 		particleScale = 0.5f + strenghtFactor / 10;
 		durationTimer = Random.Range(25f, 35f) - strenghtFactor * 2;

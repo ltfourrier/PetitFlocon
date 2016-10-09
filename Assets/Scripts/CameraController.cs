@@ -41,8 +41,7 @@ public class CameraController : MonoBehaviour {
         Application.targetFrameRate = 60;
         camHeight = Camera.main.orthographicSize;
         camWidth = Camera.main.aspect * camHeight;
-        Screen.SetResolution(1024, 576, false);
-        Application.targetFrameRate = 60;
+        //Screen.SetResolution(640, 576, false);
 		Time.timeScale = 1f;
 	}
 

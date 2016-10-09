@@ -27,12 +27,16 @@ public class Blueprint : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		rend.enabled = false;
-		isPlaceable = false;
+		if (other.gameObject.layer != LayerMask.NameToLayer("Weather")){
+			rend.enabled = false;
+			isPlaceable = false;
+		}
 	}
 	void OnTriggerExit2D(Collider2D other){
-		rend.enabled = true;
-		isPlaceable = true;
+		if (other.gameObject.layer != LayerMask.NameToLayer ("Weather")) {
+			rend.enabled = true;
+			isPlaceable = true;
+		}
 	}
 
 	public void PlaceConstruction(){

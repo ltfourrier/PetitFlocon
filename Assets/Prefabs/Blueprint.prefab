@@ -21,7 +21,6 @@ GameObject:
   - 4: {fileID: 4000012027702150}
   - 212: {fileID: 212000011723791184}
   - 114: {fileID: 114000013047638986}
-  - 114: {fileID: 114000013250557920}
   - 61: {fileID: 61000012009933838}
   m_Layer: 0
   m_Name: Blueprint
@@ -72,19 +71,6 @@ MonoBehaviour:
     type: 2}
   type: 0
   cost: 10
---- !u!114 &114000013250557920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010323158908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5849d47a6f312741b6c96c42a8c8be6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alwaysUnder: 1
-  alwaysAbove: 0
 --- !u!212 &212000011723791184
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -113,7 +99,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -30000
   m_Sprite: {fileID: 21300000, guid: 521eacd90ba6ca4429a90125bab96587, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

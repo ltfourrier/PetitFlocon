@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  automaticDecay: 0.1
+  automaticDecay: 0.2
   horizontal: {fileID: 21300002, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}
   vertical: {fileID: 21300004, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}
   dfault: {fileID: 21300008, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}

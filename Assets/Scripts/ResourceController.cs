@@ -7,14 +7,17 @@ public class ResourceController : MonoBehaviour {
 	public GameObject resourcePrefab;
 	public int minResourceAmount;
 	public int maxResourceAmount;
+	public int dropOnHit;
 	public float spawnRange;
 	public Sprite remainsSprite;
+	public AudioClip destroySound;
+	private AudioSource audioSource;
 
 	private int resourceAmount;
 
 	// Use this for initialization
 	void Start () {
-	
+		audioSource = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -23,9 +26,16 @@ public class ResourceController : MonoBehaviour {
 	}
 
 	public void Hit(){
+		audioSource.Play ();
+		//AudioSource.PlayClipAtPoint (hitSound, transform.position);
 		hitPoint--;
+		for (int i = 0; i < dropOnHit; i++) {
+			Instantiate (resourcePrefab, randomVector(), transform.rotation);
+		}
 		Camera.main.GetComponent<CameraShake> ().shake (25f, 10f);
 		if (hitPoint <= 0) {
+			audioSource.clip = destroySound;
+			audioSource.Play ();
 			resourceAmount = Random.Range (minResourceAmount, maxResourceAmount);
 			for (int i = 0; i < resourceAmount; i++) {
 				Instantiate (resourcePrefab, randomVector(), transform.rotation);

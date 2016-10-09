@@ -20,7 +20,6 @@ public class StormParticleController : MonoBehaviour {
 		PlayerController player;
 		if ((player = other.gameObject.GetComponent<PlayerController> ()) != null) {
 			player.health -= damage;
-			Destroy (gameObject);
 		}
 		Construction construction;
 		if ((construction = other.gameObject.GetComponent<Construction> ()) != null) {

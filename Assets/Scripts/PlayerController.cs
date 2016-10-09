@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour {
 
 
 	void Update () {
+
+		if (health <= 0)
+			Destroy (gameObject);
+
 		if (building && Input.GetButton ("Action")) // exit building mode if action button is pressed
 			building = false;
 

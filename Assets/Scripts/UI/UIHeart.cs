@@ -17,13 +17,13 @@ public class UIHeart : MonoBehaviour {
 	}
 
 	void Update () {
-		if (player.health >= minHealth + 80) {
+		if (player.health >= minHealth + 40) {
 			setState (0);
-		} else if (player.health >= minHealth + 60) {
+		} else if (player.health >= minHealth + 30) {
 			setState (1);
-		} else if (player.health >= minHealth + 40) {
-			setState (2);
 		} else if (player.health >= minHealth + 20) {
+			setState (2);
+		} else if (player.health >= minHealth + 10) {
 			setState (3);
 		} else if (player.health > minHealth) {
 			setState (4);

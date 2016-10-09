@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000011823915596}
   - 114: {fileID: 114000012131349978}
   - 212: {fileID: 212000010355633486}
+  - 82: {fileID: 82000010206898710}
   m_Layer: 0
   m_Name: Weather Controller
   m_TagString: Untagged
@@ -41,6 +42,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!82 &82000010206898710
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014159397648}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 429cbdef9c875824099c5cbb64f78cca, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114000012131349978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53,14 +128,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storm: 0
-  stormTimer: 0
-  frequency: 10
-  density: 10
-  speed: 15
-  damage: 1
-  stormGeneralDirection: {x: 1, y: 0}
+  maxStrenght: 6
   StormParticlePrefab: {fileID: 1000011553629362, guid: 405e1c9a259fe2a469838a5393910103,
     type: 2}
+  nextTimer: 1
+  durationTimer: 0
+  strenght: 6
+  stormDirection: {x: 0, y: 0}
 --- !u!212 &212000010355633486
 SpriteRenderer:
   m_ObjectHideFlags: 1
