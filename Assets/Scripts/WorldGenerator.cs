@@ -42,6 +42,7 @@ public class WorldGenerator : MonoBehaviour {
 
     public GameObject terrainRenderer;
     public GameObject pineTree;
+    public GameObject mineral;
 
     public Camera mainCamera;
 
@@ -58,7 +59,7 @@ public class WorldGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // Compute the scale needed to go from pixels to chunk position.
-        Vector3 pixelToChunkScale = new Vector3(1.0f / 8.0f / chunkWidth, 1.0f / 8.0f /chunkHeight);
+        Vector3 pixelToChunkScale = new Vector3(1.0f / 8.0f / chunkWidth, 1.0f / 8.0f / chunkHeight);
 
         // Check for the four corners of the Camera
         for (float x = 0.0f; x <= 1.0f; x += 1.0f) {
@@ -74,8 +75,6 @@ public class WorldGenerator : MonoBehaviour {
     }
 
     void GenerateChunk (Vector2i chunkPosition) {
-        Debug.Log("Instantiated chunk at " + chunkPosition.ToString());
-
         // Like the update method, we need a chunk to pixels scaling vector.
         Vector3 chunkToPixelScale = new Vector3(chunkWidth * 8.0f, chunkHeight * 8.0f);
 
@@ -85,29 +84,44 @@ public class WorldGenerator : MonoBehaviour {
 
         // Scale to pixels and add the chunk
         position.Scale(chunkToPixelScale);
+        position += this.transform.position;
         GameObject chunk = Instantiate(terrainRenderer);
-        chunk.transform.position = position + this.transform.position;
+        chunk.transform.position = position;
+        TerrainRenderer renderer = chunk.GetComponent<TerrainRenderer>();
+        renderer.width = this.chunkWidth;
+        renderer.height = this.chunkHeight;
         chunks.Add(chunkPosition, chunk);
 
-        // Now that the chunk is added, we adjust the max ressources and generate them
-        if (maxResources >= 10.0f) {
-            maxResources = 10.0f;
-        } else if (maxResources <= 1.0f) {
-            maxResources = 1.0f;
-        }
+        if (!(chunkPosition.x == 0 && chunkPosition.y == 0)) {
+            // Now that the chunk is added, we adjust the max ressources and generate them
+            if (maxResources >= 10.0f) {
+                maxResources = 10.0f;
+            } else if (maxResources <= 1.0f) {
+                maxResources = 1.0f;
+            }
 
-        // Convert the pixel position to a tile position
-        position.Scale(new Vector3(1.0f / 8.0f, 1.0f / 8.0f));
+            // Convert the pixel position to a tile position
+            position.Scale(new Vector3(1.0f / 8.0f, 1.0f / 8.0f));
 
-        int treeCount = Random.Range(0, (int) maxResources);
-        for (int it = 0; it < treeCount; it++) {
-            Vector3 treePosition = new Vector3(
-                Mathf.Floor(Random.Range(position.x, position.x + chunkWidth)),
-                Mathf.Floor(Random.Range(position.y, position.y + chunkHeight)));
-            Debug.Log("Instantiated tree at " + treePosition.ToString());
-            treePosition.Scale(new Vector3(8.0f, 8.0f));
-            GameObject tree = Instantiate(pineTree);
-            tree.transform.position = treePosition;
+            int treeCount = Random.Range(1, (int)(maxResources + 2.0f));
+            for (int it = 0; it < treeCount; it++) {
+                Vector3 treePosition = new Vector3(
+                    Mathf.Floor(Random.Range(position.x, position.x + chunkWidth)),
+                    Mathf.Floor(Random.Range(position.y, position.y + chunkHeight)));
+                treePosition.Scale(new Vector3(8.0f, 8.0f));
+                GameObject tree = Instantiate(pineTree);
+                tree.transform.position = treePosition;
+            }
+
+            int rockCount = Random.Range(0, (int)(maxResources / 2.0f + 1.25f));
+            for (int it = 0; it < rockCount; it++) {
+                Vector3 rockPosition = new Vector3(
+                    Mathf.Floor(Random.Range(position.x, position.x + chunkWidth)),
+                    Mathf.Floor(Random.Range(position.y, position.y + chunkHeight)));
+                rockPosition.Scale(new Vector3(8.0f, 8.0f));
+                GameObject rock = Instantiate(mineral);
+                rock.transform.position = rockPosition;
+            }
         }
     }
 
