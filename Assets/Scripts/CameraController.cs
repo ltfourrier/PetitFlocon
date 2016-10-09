@@ -53,6 +53,7 @@ public class CameraController : MonoBehaviour {
 	
 	void FixedUpdate () 
     {
+		
 		playerProjection.Set(player.position.x, player.position.y, originalZ);
         transform.position = Vector3.Lerp(playerProjection, transform.position, lerpFactor);
 
@@ -64,6 +65,7 @@ public class CameraController : MonoBehaviour {
             transform.position.z
         );
 
-        transform.position = clampedPosition;
+		if (Vector3.Distance (topRight, bottomLeft) > 1)
+        	transform.position = clampedPosition;
 	}
 }
