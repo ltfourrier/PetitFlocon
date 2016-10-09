@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000011589655234}
+  m_IsPrefabParent: 1
+--- !u!1 &1000011589655234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012214822430}
+  - 114: {fileID: 114000012398466548}
+  m_Layer: 0
+  m_Name: World Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012214822430
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011589655234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -104, y: -104, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000012398466548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011589655234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1045ac291ea53c349a29eff5c4c8bacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainRenderer: {fileID: 1000010722776666, guid: 66ea0b2eb7a88684baf893195c3bacc1,
+    type: 2}
+  pineTree: {fileID: 1000010699016182, guid: 9c7d62ba3d28ba64e8ab4396a1b94438, type: 2}
+  mineral: {fileID: 1000012943371916, guid: 9c7c1f1a09681454f92aa4ccc76ed5c2, type: 2}
+  mainCamera: {fileID: 0}
+  chunkWidth: 32
+  chunkHeight: 32
+  resourceLowerBound: 4
+  resourceUpperBound: 20
+  resourceTotalDistance: 20
