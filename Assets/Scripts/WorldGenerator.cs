@@ -92,9 +92,6 @@ public class WorldGenerator : MonoBehaviour {
         position += this.transform.position;
         GameObject chunk = Instantiate(terrainRenderer);
         chunk.transform.position = position;
-        TerrainRenderer renderer = chunk.GetComponent<TerrainRenderer>();
-        renderer.width = this.chunkWidth;
-        renderer.height = this.chunkHeight;
         chunks.Add(chunkPosition, chunk);
 
         if (!(chunkPosition.x == 0 && chunkPosition.y == 0)) {

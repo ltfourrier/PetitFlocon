@@ -31,13 +31,16 @@ public class PlayerController : MonoBehaviour {
 		blueprint.transform.parent = transform;
 		blueprint.gameObject.SetActive (false);
 		timer = 0;
+		animator.SetInteger ("Direction", 1);
 	}
 
 
 	void Update () {
 
-		if (health <= 0)
-			Destroy (gameObject);
+		if (health <= 0) {
+			GetComponent<GameOverController> ().EndGame ();
+			enabled = false;
+		}
 
 		if (building && Input.GetButton ("Action")) { // exit building mode if action button is pressed
 			building = false;

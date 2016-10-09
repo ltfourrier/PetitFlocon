@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000014159397648}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 32, y: 32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -130,7 +130,7 @@ MonoBehaviour:
   storm: 0
   maxStrenght: 3
   timeScaling: 0.7
-  StormParticlePrefab: {fileID: 1000011553629362, guid: 405e1c9a259fe2a469838a5393910103,
+  stormParticlePrefab: {fileID: 1000011553629362, guid: 405e1c9a259fe2a469838a5393910103,
     type: 2}
   nextTimer: 1
   durationTimer: 0
