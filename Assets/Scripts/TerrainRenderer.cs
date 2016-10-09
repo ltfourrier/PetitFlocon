@@ -6,6 +6,7 @@ public class TerrainRenderer : MonoBehaviour {
 	public int width, height; // in tiles
 	public GameObject tilePrefab;
 	private GameObject tile;
+
 	// Use this for initialization
 	void Start () {
 		GetComponent<SpriteRenderer> ().enabled = false;
