@@ -32,8 +32,7 @@ public class CameraController : MonoBehaviour {
         }
     }*/
 
-	void Start () 
-    {
+	void Start () {
 		originalZ = transform.position.z;
         transform.position = new Vector3(player.position.x, player.position.y, originalZ);
         playerProjection = new Vector3();
@@ -46,25 +45,13 @@ public class CameraController : MonoBehaviour {
 		Time.timeScale = 1f;
 	}
 
-    void Update()
-    {
-        
-        //Debug.Log(transform.position.x);
+    void Update () {
+
     }
-	
-	void FixedUpdate () 
-    {
-		playerProjection.Set(player.position.x, player.position.y, originalZ);
+
+    void FixedUpdate () {
+        playerProjection.Set(player.position.x, player.position.y, originalZ);
         transform.position = Vector3.Lerp(playerProjection, transform.position, lerpFactor);
+    }
 
-
-        clampedPosition.Set
-        (
-            Mathf.Clamp(transform.position.x, bottomLeft.x + camWidth, topRight.x - camWidth), 
-            Mathf.Clamp(transform.position.y, bottomLeft.y + camHeight, topRight.y - camHeight),
-            transform.position.z
-        );
-
-        transform.position = clampedPosition;
-	}
 }
