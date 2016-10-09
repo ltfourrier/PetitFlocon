@@ -11,7 +11,7 @@ public class Blueprint : MonoBehaviour {
 	private Vector3 roundedScale;
 	private SpriteRenderer rend;
 	private Backpack backpack;
-	private bool isPlaceable;
+	public bool isPlaceable;
 	private PlayerController player;
 	// Use this for initialization
 	void Start () {
@@ -26,46 +26,37 @@ public class Blueprint : MonoBehaviour {
 		roundedPosition.Set(Mathf.Round(transform.position.x / 8) * 8, Mathf.Round(transform.position.y / 8) * 8, transform.position.z);
 		transform.position = roundedPosition;
 		rend.sortingOrder = Mathf.RoundToInt (-transform.position.y / 8);
-		Debug.DrawLine (player.transform.position + Vector3.up * 4, player.actionRange, Color.red);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.layer != LayerMask.NameToLayer ("Weather")) {
-			rend.enabled = false;
-			isPlaceable = false;
-
-			/*if (Mathf.Abs ((player.transform.position - (Vector3)player.actionRange + Vector3.up * 4).y) < 1) { // player is on the right or left
-				Debug.Log("Player in right or left");
-				if (((Vector3)player.actionRange - transform.position).y >= 0) { // if the blueprint was moved to the bottom
-					transform.position = new Vector3 (transform.position.x, transform.position.y - 8, transform.position.z);
-				} else {
-					transform.position = new Vector3 (transform.position.x, transform.position.y + 8, transform.position.z);
-				}
-			}*/
+			setPlaceable (false);
+			Debug.Log ("Blueprint collided - deactivating");
 		}
 	}
 	void OnTriggerExit2D(Collider2D other){
 		if (other.gameObject.layer != LayerMask.NameToLayer ("Weather")) {
-			rend.enabled = true;
-			isPlaceable = true;
+			setPlaceable (true);
+			Debug.Log ("Blueprint left collision - reactivating");
 		}
 	}
 
 	public void PlaceConstruction(){
 		if (isPlaceable && backpack.resources [type] >= cost) {
+			Debug.Log ("Construction successfully placed");
 			GameObject construction = Instantiate (constructionPrefab);
 			construction.transform.position = transform.position;
 			backpack.resources [type] -= cost;
 		}
 	}
 
-	private void setPlaceable(bool b){
-		if (b = false || backpack.resources [type] < cost) {
+	public void setPlaceable(bool b){
+		if (!b) {
 			isPlaceable = false;
 			rend.enabled = false;
 		} else {
 			isPlaceable = true;
-			rend.enabled = false;
+			rend.enabled = true;
 		}
 	}
 }

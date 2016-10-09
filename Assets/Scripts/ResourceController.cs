@@ -34,7 +34,7 @@ public class ResourceController : MonoBehaviour {
 		if (hitPoint <= 0) {
 			audioSource.clip = destroySound;
 			audioSource.Play ();
-			resourceAmount = Random.Range (minResourceAmount, maxResourceAmount);
+			resourceAmount = Random.Range (minResourceAmount, maxResourceAmount + 1);
 			for (int i = 0; i < resourceAmount; i++) {
 				Instantiate (resourcePrefab, randomVector(), transform.rotation);
 			}
