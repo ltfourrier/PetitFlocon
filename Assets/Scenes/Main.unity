@@ -584,6 +584,9 @@ MonoBehaviour:
   mainCamera: {fileID: 1962830429}
   chunkWidth: 32
   chunkHeight: 32
+  resourceLowerBound: 1
+  resourceUpperBound: 10
+  resourceTotalDistance: 20
 --- !u!4 &1902187290
 Transform:
   m_ObjectHideFlags: 0
