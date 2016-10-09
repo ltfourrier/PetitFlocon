@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storm: 0
-  maxStrenght: 6
+  maxStrenght: 3
+  timeScaling: 0.7
   StormParticlePrefab: {fileID: 1000011553629362, guid: 405e1c9a259fe2a469838a5393910103,
     type: 2}
   nextTimer: 1

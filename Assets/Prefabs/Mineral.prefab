@@ -76,7 +76,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 5}
   serializedVersion: 2
-  m_Size: {x: 8, y: 8}
+  m_Size: {x: 14, y: 8}
 --- !u!82 &82000010756088682
 AudioSource:
   m_ObjectHideFlags: 1
@@ -162,11 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c0590844bc844241aaf73f57355b69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoint: 20
+  hitPoint: 15
+  maxHitPoint: 25
   resourcePrefab: {fileID: 1000012971226784, guid: 2f27b73c715aba74c89a1b247ec88310,
     type: 2}
-  minResourceAmount: 18
-  maxResourceAmount: 22
+  minResourceAmount: 10
+  maxResourceAmount: 18
   dropOnHit: 1
   spawnRange: 20
   remainsSprite: {fileID: 0}

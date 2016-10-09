@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoint: 4
+  maxHitPoint: 5
   resourcePrefab: {fileID: 1000012586002336, guid: c9ef506e7731e754dbc4079f1a284009,
     type: 2}
   minResourceAmount: 8

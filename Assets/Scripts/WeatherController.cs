@@ -5,6 +5,7 @@ public class WeatherController : MonoBehaviour {
 
 	public bool storm;
 	public float maxStrenght;
+	public float timeScaling;
 	public GameObject StormParticlePrefab;
 
 	public float nextTimer;
@@ -44,6 +45,8 @@ public class WeatherController : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		if (maxStrenght < 7f)
+			maxStrenght += Time.fixedDeltaTime * timeScaling / 100;
 		if (storm) {
 			if (!audioSource.isPlaying) {
 				audioSource.volume = strenght / maxStrenght;
@@ -65,8 +68,8 @@ public class WeatherController : MonoBehaviour {
 					particle.transform.parent = transform;
 					particle.transform.position = Vector3.Lerp (stormOrigin - parallel * 100, stormOrigin + parallel * 100, Random.Range (0f, 1f));  //new Vector3 (-120, Random.Range (-150, 150), 0);
 					direction = Vector3.Slerp (Rotate (stormDirection, 45f), Rotate (stormDirection, -45f), Random.Range (0f, 1f));
-					particle.transform.localScale = transform.localScale * particleScale;
-					particle.transform.rotation = Quaternion.FromToRotation (Vector3.up, direction);
+					//particle.transform.localScale = transform.localScale * particleScale;
+					//particle.transform.rotation = Quaternion.FromToRotation (Vector3.up, direction);
 					particle.AddForce (direction * speed * 1000);
 					particle.GetComponent<StormParticleController> ().damage = damage;
 				}
@@ -82,16 +85,18 @@ public class WeatherController : MonoBehaviour {
 	}
 
 	private void GenerateStorm(float strenghtFactor) {
-		stormDirection = Rotate(Vector2.up, Random.Range(0f, 360f));
+		stormDirection = Rotate(Vector2.up, 90f * Random.Range(0, 4));
 		parallel = Rotate(stormDirection, 90f);
 		density = Mathf.RoundToInt(strenghtFactor * 1.5f);
 		frequency = 1f + strenghtFactor * 3f;
 		spawnDelay = 1 / frequency;
 		speed = 10f + strenghtFactor;
 		damage = 1f + strenghtFactor / 10f;
+		damage *= 1.5f;
 		shakeIntensity = 2f + strenghtFactor * 3f;
 		particleScale = 0.5f + strenghtFactor / 10;
 		durationTimer = Random.Range(25f, 35f) - strenghtFactor * 2;
+		durationTimer /= 1.5f;
 		nextTimer = Random.Range(25f, 35f) + strenghtFactor * strenghtFactor * 3;
 	}
 

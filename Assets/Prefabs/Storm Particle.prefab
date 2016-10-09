@@ -24,7 +24,8 @@ GameObject:
   - 50: {fileID: 50000011600983066}
   - 114: {fileID: 114000011648294582}
   - 114: {fileID: 114000010501542484}
-  m_Layer: 0
+  - 114: {fileID: 114000012484926796}
+  m_Layer: 11
   m_Name: Storm Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +101,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alwaysUnder: 0
   alwaysAbove: 1
+--- !u!114 &114000012484926796
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011553629362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68929410c8c39884e968ca39aee6654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000013816856512
 SpriteRenderer:
   m_ObjectHideFlags: 1
