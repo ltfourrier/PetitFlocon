@@ -26,6 +26,7 @@ GameObject:
   - 114: {fileID: 114000010735947378}
   - 50: {fileID: 50000011123593558}
   - 82: {fileID: 82000010756088682}
+  - 114: {fileID: 114000012790063202}
   m_Layer: 9
   m_Name: Mineral
   m_TagString: Untagged
@@ -197,6 +198,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileSize: 8
+--- !u!114 &114000012790063202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012943371916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d5dace559a78c4c8070ee131c523ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000010698663082
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -23,6 +23,7 @@ GameObject:
   - 114: {fileID: 114000012402724560}
   - 114: {fileID: 114000012176422640}
   - 114: {fileID: 114000013872174990}
+  - 114: {fileID: 114000010807831292}
   m_Layer: 0
   m_Name: Terrain Tile
   m_TagString: Untagged
@@ -43,6 +44,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &114000010807831292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013759678810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d5dace559a78c4c8070ee131c523ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000012176422640
 MonoBehaviour:
   m_ObjectHideFlags: 1

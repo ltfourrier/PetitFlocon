@@ -21,11 +21,7 @@ public class ResourceController : MonoBehaviour {
 		hitPoint = Random.Range (hitPoint, maxHitPoint +1);
 		audioSource = GetComponent<AudioSource> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 
 	public void Hit(){
 		audioSource.Play ();
