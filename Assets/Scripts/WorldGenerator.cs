@@ -49,6 +49,11 @@ public class WorldGenerator : MonoBehaviour {
     public int chunkWidth;
     public int chunkHeight;
 
+    public int resourceLowerBound; // The ressource factor when far away (min.)
+    public int resourceUpperBound; // The ressource factor when near the spawn (max.)
+    public int resourceTotalDistance; // How many chunks it takes to get the upper bound
+
+
     private Dictionary<Vector2i, GameObject> chunks;
 
 	// Use this for initialization
@@ -80,7 +85,7 @@ public class WorldGenerator : MonoBehaviour {
 
         // Before we scale, calculate the maximum resource number
         Vector3 position = new Vector3(chunkPosition.x, chunkPosition.y);
-        float maxResources = 20.0f / position.magnitude;
+        float maxResources = resourceTotalDistance / position.magnitude;
 
         // Scale to pixels and add the chunk
         position.Scale(chunkToPixelScale);
@@ -94,10 +99,10 @@ public class WorldGenerator : MonoBehaviour {
 
         if (!(chunkPosition.x == 0 && chunkPosition.y == 0)) {
             // Now that the chunk is added, we adjust the max ressources and generate them
-            if (maxResources >= 10.0f) {
-                maxResources = 10.0f;
-            } else if (maxResources <= 1.0f) {
-                maxResources = 1.0f;
+            if (maxResources >= resourceUpperBound) {
+                maxResources = resourceUpperBound;
+            } else if (maxResources <= resourceLowerBound) {
+                maxResources = resourceLowerBound;
             }
 
             // Convert the pixel position to a tile position
