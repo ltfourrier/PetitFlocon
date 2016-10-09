@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Construction : MonoBehaviour {
 
+	public float health;
+	public float automaticDecay; // in percent per frame
 	public Sprite horizontal;
 	public Sprite vertical;
 	public Sprite dfault;
@@ -23,6 +25,15 @@ public class Construction : MonoBehaviour {
 		rend.sortingOrder = Mathf.RoundToInt (-transform.position.y / 8);
 
 		TriggerUpdate (true);
+	}
+
+	void FixedUpdate(){
+		health -= automaticDecay / 100;
+		if (health <= 0) {
+			Destroy (gameObject);
+			TriggerUpdate (true);
+		}
+			
 	}
 
 	void TriggerUpdate(bool updateNeighbours){

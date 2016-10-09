@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+	public float health;
 	public float movementSpeed;
 	public float range;
 	public float hitSpeed;
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	private Blueprint blueprint;
 	private float hAxis, vAxis;
 	private Vector3 newPosition, movement;
-	private Vector2 actionRange; // determines the max distance resources can be mined
+	[HideInInspector] public Vector2 actionRange; // determines the max distance resources can be mined
 	private float timer;
 	private bool acting, building; // player modes
 	private RaycastHit2D raycast;
@@ -34,6 +35,10 @@ public class PlayerController : MonoBehaviour {
 
 
 	void Update () {
+
+		if (health <= 0)
+			Destroy (gameObject);
+
 		if (building && Input.GetButton ("Action")) // exit building mode if action button is pressed
 			building = false;
 
@@ -43,8 +48,8 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			// enter movement mode
 			acting = false;
-			if (timer != 0)
-				timer = 0;
+			/*if (timer != 0)
+				timer = 0;*/
 
 			if (Input.GetButtonDown ("Place")) {
 				if (!building) // if place button is pressed for the first time, enter build mode
@@ -91,13 +96,16 @@ public class PlayerController : MonoBehaviour {
 			if (animator.GetBool ("Moving"))
 				animator.SetBool ("Moving", false);
 			
-			timer += Time.fixedDeltaTime;
-			if (timer > hitSpeed) {
+
+			if (timer <= 0) {
 				raycast.collider.gameObject.GetComponent<ResourceController> ().Hit ();
-				timer = 0;
+				timer = hitSpeed;
 			}
 		}
-		blueprint.transform.position = transform.position + ((Vector3)actionRange - coll.bounds.center).normalized * 16; // update position
+		if (timer > 0)
+			timer -= Time.fixedDeltaTime;
+
+		blueprint.transform.position = transform.position + ((Vector3)actionRange - coll.bounds.center).normalized * 13; // update position
 		if (building) { // BUILDING MODE
 			if (!blueprint.gameObject.activeSelf)
 				blueprint.gameObject.SetActive (true); // activate blueprint

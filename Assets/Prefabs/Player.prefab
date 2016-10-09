@@ -26,6 +26,8 @@ GameObject:
   - 114: {fileID: 114000010019375566}
   - 50: {fileID: 50000012950883742}
   - 114: {fileID: 114000010457112226}
+  - 82: {fileID: 82000014081299220}
+  - 114: {fileID: 114000011189268914}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -71,12 +73,86 @@ BoxCollider2D:
   m_GameObject: {fileID: 1000011831057094}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 484db5058370a614eaa6437b613fa6ce, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 4}
   serializedVersion: 2
   m_Size: {x: 8, y: 8}
+--- !u!82 &82000014081299220
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011831057094}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 1
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95000010142985810
 Animator:
   serializedVersion: 3
@@ -105,11 +181,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb59ae5312fd3b242857710668ce006e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 150
   movementSpeed: 1
   range: 3
   hitSpeed: 1
-  blueprintPrefab: {fileID: 1000010384552824, guid: 6686fd21ac030064498b576f9eac0f9b,
+  blueprintPrefab: {fileID: 1000010323158908, guid: 6686fd21ac030064498b576f9eac0f9b,
     type: 2}
+  actionRange: {x: 0, y: 0}
 --- !u!114 &114000010026757406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,8 +211,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5533fefba6470bf469148416a0b92a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodAmount: {fileID: 114000012769391408, guid: e393709b5b5be8449b2ae0b9a4adee2a,
-    type: 2}
+  woodAmount: {fileID: 0}
+  woodSound: {fileID: 8300000, guid: 969da0f31aa6b1842b75d6ce19e4b44f, type: 3}
+  mineralAmount: {fileID: 0}
+  mineralSound: {fileID: 8300000, guid: 969da0f31aa6b1842b75d6ce19e4b44f, type: 3}
+--- !u!114 &114000011189268914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011831057094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68929410c8c39884e968ca39aee6654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000010868640772
 SpriteRenderer:
   m_ObjectHideFlags: 1
