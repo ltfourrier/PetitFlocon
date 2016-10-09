@@ -88,7 +88,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   automaticDecay: 0.2
-  horizontal: {fileID: 21300002, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}
+  horizontal: {fileID: 21300000, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}
   vertical: {fileID: 21300004, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}
   dfault: {fileID: 21300008, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}
 --- !u!114 &114000013347095516
@@ -132,7 +132,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300008, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 25f94e42cffd63c4590de9b14b6a8884, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -15,7 +15,7 @@ public class Backpack : MonoBehaviour {
 	private AudioSource audioSource;
 	// Use this for initialization
 	void Start () {
-		resources = new Dictionary<ResourceType, int> () {{ResourceType.wood, 100}, {ResourceType.mineral, 0}};
+		resources = new Dictionary<ResourceType, int> () {{ResourceType.wood, 0}, {ResourceType.mineral, 0}};
 		audioSource = GetComponent<AudioSource> ();
 	}
 	

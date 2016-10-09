@@ -52,12 +52,6 @@ public class WeatherController : MonoBehaviour {
 				audioSource.volume = strenght / maxStrenght;
 				audioSource.Play ();
 			}
-			durationTimer -= Time.fixedDeltaTime;
-			if (durationTimer <= 0) {
-				storm = false;
-				strenght = Random.Range (1, maxStrenght);
-				GenerateStorm (strenght);
-			}
 			stormOrigin = (Vector2)Camera.main.transform.position - stormDirection * 120;
 			Camera.main.GetComponent<CameraShake> ().shake (shakeIntensity, 2f);
 
@@ -75,6 +69,12 @@ public class WeatherController : MonoBehaviour {
 				}
 				timer = 0;
 			}
+			durationTimer -= Time.fixedDeltaTime;
+			if (durationTimer <= 0) {
+				storm = false;
+				strenght = Random.Range (1, maxStrenght);
+				GenerateStorm (strenght);
+			}
 		} else {
 			if (audioSource.isPlaying)
 				audioSource.Stop ();
@@ -84,7 +84,7 @@ public class WeatherController : MonoBehaviour {
 		}
 	}
 
-	private void GenerateStorm(float strenghtFactor) {
+	public void GenerateStorm(float strenghtFactor) {
 		stormDirection = Rotate(Vector2.up, 90f * Random.Range(0, 4));
 		parallel = Rotate(stormDirection, 90f);
 		density = Mathf.RoundToInt(strenghtFactor * 1.5f);
@@ -93,7 +93,7 @@ public class WeatherController : MonoBehaviour {
 		speed = 10f + strenghtFactor;
 		damage = 1f + strenghtFactor / 10f;
 		damage *= 1.5f;
-		shakeIntensity = 2f + strenghtFactor * 3f;
+		shakeIntensity = 5f + strenghtFactor * 3f;
 		particleScale = 0.5f + strenghtFactor / 10;
 		durationTimer = Random.Range(25f, 35f) - strenghtFactor * 2;
 		durationTimer /= 1.5f;

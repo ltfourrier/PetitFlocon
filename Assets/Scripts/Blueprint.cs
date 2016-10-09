@@ -31,7 +31,7 @@ public class Blueprint : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.layer != LayerMask.NameToLayer ("Weather")) {
-			//rend.enabled = false;
+			rend.enabled = false;
 			isPlaceable = false;
 
 			/*if (Mathf.Abs ((player.transform.position - (Vector3)player.actionRange + Vector3.up * 4).y) < 1) { // player is on the right or left
