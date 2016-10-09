@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using EZObjectPools;
 using System.Collections;
 
 public class WeatherController : MonoBehaviour {
@@ -6,7 +7,7 @@ public class WeatherController : MonoBehaviour {
 	public bool storm;
 	public float maxStrenght;
 	public float timeScaling;
-	public GameObject StormParticlePrefab;
+	public GameObject stormParticlePrefab;
 
 	public float nextTimer;
 	public float durationTimer;
@@ -21,12 +22,17 @@ public class WeatherController : MonoBehaviour {
 	public Vector2 stormDirection;
 	private float timer;
 	private Rigidbody2D particle;
+	private GameObject spawn;
 	private float spawnDelay;
 
 	private Vector2 direction;
 	private Vector2 parallel;
 	private Vector2 stormOrigin;
 	private AudioSource audioSource;
+	private Vector3 particleInitialPosition;
+	private CameraShake cam;
+
+	private EZObjectPool particlePool;
 
 	// Use this for initialization
 	void Start () {
@@ -37,6 +43,8 @@ public class WeatherController : MonoBehaviour {
 		strenght = Random.Range (1, maxStrenght);
 		audioSource = GetComponent<AudioSource> ();
 		GenerateStorm (strenght);
+		particlePool = EZObjectPool.CreateObjectPool (stormParticlePrefab, "Storm Pool", 100, true, true, false);
+		cam = Camera.main.GetComponent<CameraShake> ();
 	}
 
 	void FixedUpdate() {
@@ -48,14 +56,17 @@ public class WeatherController : MonoBehaviour {
 				audioSource.Play ();
 			}
 			stormOrigin = (Vector2)Camera.main.transform.position - stormDirection * 120;
-			Camera.main.GetComponent<CameraShake> ().shake (shakeIntensity, 2f);
+			cam.shake (shakeIntensity, 2f);
 
 			timer += Time.fixedDeltaTime;
 			if (timer >= spawnDelay) {
 				for (int i = 0; i < density; i++) {
-					particle = Instantiate (StormParticlePrefab).GetComponent<Rigidbody2D> ();
-					particle.transform.parent = transform;
-					particle.transform.position = Vector3.Lerp (stormOrigin - parallel * 100, stormOrigin + parallel * 100, Random.Range (0f, 1f));  //new Vector3 (-120, Random.Range (-150, 150), 0);
+					particleInitialPosition = Vector3.Lerp (stormOrigin - parallel * 100, stormOrigin + parallel * 100, Random.Range (0f, 1f));
+					particlePool.TryGetNextObject (particleInitialPosition, Quaternion.identity, out spawn);
+					particle = spawn.GetComponent<Rigidbody2D> ();
+					//particle = Instantiate (stormParticlePrefab).GetComponent<Rigidbody2D> ();
+					//particle.transform.parent = transform;
+					//particle.transform.position = Vector3.Lerp (stormOrigin - parallel * 100, stormOrigin + parallel * 100, Random.Range (0f, 1f));
 					direction = Vector3.Slerp (Rotate (stormDirection, 45f), Rotate (stormDirection, -45f), Random.Range (0f, 1f));
 					//particle.transform.localScale = transform.localScale * particleScale;
 					//particle.transform.rotation = Quaternion.FromToRotation (Vector3.up, direction);
@@ -88,7 +99,7 @@ public class WeatherController : MonoBehaviour {
 		speed = 10f + strenghtFactor;
 		damage = 1f + strenghtFactor / 10f;
 		damage *= 1.5f;
-		shakeIntensity = 5f + strenghtFactor * 3f;
+		shakeIntensity = 8f + strenghtFactor * 5f;
 		particleScale = 0.5f + strenghtFactor / 10;
 		durationTimer = Random.Range(25f, 35f) - strenghtFactor * 2;
 		durationTimer /= 1.5f;

@@ -49,7 +49,7 @@ public class TutorialController : MonoBehaviour {
 			}
 		} else if (i == 1) {
 			if (rock.hitPoint > 0) {
-				dialogContent = "Collect minerals by mining rocks. They represent your score!";
+				dialogContent = "Collect gems by mining rocks. They represent your score!";
 				dialog.text = dialogContent;
 				canva.transform.position = rock.transform.position + Vector3.down * 20 + Vector3.left * 8;
 				weather.nextTimer = 100f;

@@ -13,7 +13,7 @@ public class StormParticleController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Vector2.Distance(transform.position, cam.transform.position) > 170)
-			Destroy (gameObject);
+			gameObject.SetActive(false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
