@@ -132,10 +132,10 @@ MonoBehaviour:
   timeScaling: 0.7
   stormParticlePrefab: {fileID: 1000011553629362, guid: 405e1c9a259fe2a469838a5393910103,
     type: 2}
-  nextTimer: 1
-  durationTimer: 0
-  strenght: 6
-  stormDirection: {x: 0, y: 0}
+  nextTimer: 40
+  durationTimer: 20
+  strenght: 1.2
+  stormDirection: {x: 1, y: 0}
 --- !u!212 &212000010355633486
 SpriteRenderer:
   m_ObjectHideFlags: 1

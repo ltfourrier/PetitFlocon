@@ -40,7 +40,6 @@ public class WeatherController : MonoBehaviour {
 		spawnDelay = 1 / frequency;
 		GetComponent<SpriteRenderer> ().enabled = false;
 		parallel = Rotate(stormDirection, 45f);
-		strenght = Random.Range (1, maxStrenght);
 		audioSource = GetComponent<AudioSource> ();
 		GenerateStorm (strenght);
 		particlePool = EZObjectPool.CreateObjectPool (stormParticlePrefab, "Storm Pool", 100, true, true, false);
@@ -64,12 +63,7 @@ public class WeatherController : MonoBehaviour {
 					particleInitialPosition = Vector3.Lerp (stormOrigin - parallel * 100, stormOrigin + parallel * 100, Random.Range (0f, 1f));
 					particlePool.TryGetNextObject (particleInitialPosition, Quaternion.identity, out spawn);
 					particle = spawn.GetComponent<Rigidbody2D> ();
-					//particle = Instantiate (stormParticlePrefab).GetComponent<Rigidbody2D> ();
-					//particle.transform.parent = transform;
-					//particle.transform.position = Vector3.Lerp (stormOrigin - parallel * 100, stormOrigin + parallel * 100, Random.Range (0f, 1f));
 					direction = Vector3.Slerp (Rotate (stormDirection, 45f), Rotate (stormDirection, -45f), Random.Range (0f, 1f));
-					//particle.transform.localScale = transform.localScale * particleScale;
-					//particle.transform.rotation = Quaternion.FromToRotation (Vector3.up, direction);
 					particle.AddForce (direction * speed * 1000);
 					particle.GetComponent<StormParticleController> ().damage = damage;
 				}
@@ -96,14 +90,14 @@ public class WeatherController : MonoBehaviour {
 		density = Mathf.RoundToInt(strenghtFactor * 1.5f);
 		frequency = 1f + strenghtFactor * 3f;
 		spawnDelay = 1 / frequency;
-		speed = 10f + strenghtFactor;
+		speed = 8f + strenghtFactor * 1.5f;
 		damage = 1f + strenghtFactor / 10f;
 		damage *= 1.5f;
 		shakeIntensity = 8f + strenghtFactor * 5f;
 		particleScale = 0.5f + strenghtFactor / 10;
 		durationTimer = Random.Range(25f, 35f) - strenghtFactor * 2;
 		durationTimer /= 1.5f;
-		nextTimer = Random.Range(25f, 35f) + strenghtFactor * strenghtFactor * 3;
+		nextTimer = Random.Range(15f, 30f) + strenghtFactor * strenghtFactor * 2;
 	}
 
 	private Vector2 Rotate( Vector2 v, float degrees) {

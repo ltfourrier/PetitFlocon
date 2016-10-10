@@ -24,7 +24,7 @@ public class StormParticleController : MonoBehaviour {
 		Construction construction;
 		if ((construction = other.gameObject.GetComponent<Construction> ()) != null) {
 			construction.health -= damage;
-			Destroy (gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 }

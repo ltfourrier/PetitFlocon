@@ -30,6 +30,14 @@ public class TutorialController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (Input.GetKey (KeyCode.K)) {
+			weather.GenerateStorm (1.5f);
+			cam.topRight = transform.position;
+			cam.bottomLeft = transform.position;
+			Destroy (gameObject);
+		}
+
 		Step (step);
 	}
 
@@ -39,20 +47,20 @@ public class TutorialController : MonoBehaviour {
 				dialogContent = "Maintain x in front of a tree to cut it down and collect logs.";
 				dialog.text = dialogContent;
 				canva.transform.position = tree.transform.position + Vector3.down * 20 + Vector3.right * 24;
-				weather.nextTimer = 100f;
+				weather.nextTimer = 40f;
 			} else {
 				step = 1;
 				rock.gameObject.SetActive (true);
 				weather.GenerateStorm (1f);
-				weather.nextTimer = 100f;
+				weather.nextTimer = 30f;
 				weather.strenght = 1;
 			}
 		} else if (i == 1) {
 			if (rock.hitPoint > 0) {
 				dialogContent = "Collect gems by mining rocks. They represent your score!";
 				dialog.text = dialogContent;
-				canva.transform.position = rock.transform.position + Vector3.down * 20 + Vector3.left * 8;
-				weather.nextTimer = 100f;
+				canva.transform.position = rock.transform.position + Vector3.down * 20 + Vector3.left * 12;
+				weather.nextTimer = 20f;
 			} else
 				step = 2;
 		} else if (i == 2) {
@@ -97,7 +105,7 @@ public class TutorialController : MonoBehaviour {
 				timer = 20f;
 			}
 		} else if (i == 8) {
-			dialogContent = "You are now free to go explore the world. Have fun!";
+			dialogContent = "Next time press k to skip tutorial. Have fun!";
 			dialog.text = dialogContent;
 			cam.topRight = transform.position;
 			cam.bottomLeft = transform.position;
@@ -109,6 +117,5 @@ public class TutorialController : MonoBehaviour {
 		} else if (i == 9) {
 			Destroy (gameObject);
 		}
-
 	}
 }

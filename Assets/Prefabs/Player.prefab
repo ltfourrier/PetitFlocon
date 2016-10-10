@@ -28,6 +28,7 @@ GameObject:
   - 114: {fileID: 114000010457112226}
   - 82: {fileID: 82000014081299220}
   - 114: {fileID: 114000011189268914}
+  - 114: {fileID: 114000012820635870}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -212,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   woodAmount: {fileID: 0}
-  woodSound: {fileID: 8300000, guid: 969da0f31aa6b1842b75d6ce19e4b44f, type: 3}
+  woodSound: {fileID: 8300000, guid: 8443f66340ac7414ca12239135e2a493, type: 3}
   mineralAmount: {fileID: 0}
   mineralSound: {fileID: 8300000, guid: 969da0f31aa6b1842b75d6ce19e4b44f, type: 3}
 --- !u!114 &114000011189268914
@@ -226,6 +227,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68929410c8c39884e968ca39aee6654f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000012820635870
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011831057094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d70d76c57ea66d84c82e203bfd0f26dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathSound: {fileID: 8300000, guid: 766b69bbd51b5db449bcaf1667c5fbee, type: 3}
+  jingle: {fileID: 8300000, guid: 290ed49c44ddd854486a38de53444216, type: 3}
+  gameOverScreenPrefab: {fileID: 212000010320221608, guid: 6212bbc2ddc4f314490e1dbf03086e86,
+    type: 2}
+  musicSource: {fileID: 0}
 --- !u!212 &212000010868640772
 SpriteRenderer:
   m_ObjectHideFlags: 1
